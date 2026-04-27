@@ -12,7 +12,7 @@ mkdir -p /ap/archipelago
 cd /ap/archipelago
 
 git init
-git remote add origin https://github.com/Eijebong/Archipelago.git
+git remote add origin https://github.com/ArchipelagoMW/Archipelago.git
 git fetch origin ${BASE_COMMIT} --depth 1
 git reset --hard ${BASE_COMMIT}
 

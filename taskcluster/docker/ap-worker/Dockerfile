@@ -5,7 +5,7 @@ ARG DOCKER_SRC=/
 
 FROM alpine:latest AS enemizer
 
-ADD --checksum=sha256:efab6784cbfe4189a01e0e25226943afd7f71e7c2f10f74b88bfa34fdac972ab https://github.com/Ijwu/Enemizer/releases/latest/download/ubuntu.16.04-x64.zip Enemizer.zip
+ADD --checksum=sha256:efab6784cbfe4189a01e0e25226943afd7f71e7c2f10f74b88bfa34fdac972ab https://github.com/Ijwu/Enemizer/releases/download/7.1/ubuntu.16.04-x64.zip Enemizer.zip
 RUN apk update && apk add unzip && unzip Enemizer.zip -d /Enemizer
 
 FROM ghcr.io/astral-sh/uv:python${PYTHON_VERSION}-trixie AS builder
@@ -14,7 +14,7 @@ ARG DOCKER_SRC
 
 ENV UV_PYTHON_DOWNLOADS=0
 
-ENV BASE_COMMIT=f04b3a3457efbca6fde29beaf70c7f7f0016cdc8
+ENV BASE_COMMIT=debe4cf035c7c15efe6fb95f72343af0d420c68c
 ENV FUZZER_COMMIT=17227d793cc1088ae9be5fe97421e73bb683efdf
 ENV LINTER_COMMIT=52cfa67f7e40ebe15bf6bff6d17adb6409ad97dc
 
